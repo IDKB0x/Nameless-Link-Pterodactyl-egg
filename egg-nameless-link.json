@@ -1,0 +1,113 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1",
+        "update_url": null
+    },
+    "exported_at": "2021-07-03T19:16:16-04:00",
+    "name": "Nameless Link Egg",
+    "author": "b0x@realpackage.dev",
+    "description": "An unofficial Pterodactyl egg for the Namelessmc Discord bot.",
+    "features": null,
+    "images": [
+        "quay.io\/parkervcp\/pterodactyl-images:debian_openjdk-16"
+    ],
+    "file_denylist": [],
+    "startup": "java -DISCORD_TOKEN={{DISCORD_TOKEN}} -BOT_URL={{BOT_URL}} -API_URL={{API_URL}} -WEBSERVER_PORT={{WEBSERVER_PORT}} -GUILD_ID={{GUILD_ID}} -WEBSERVER_INTERFACE={{WEBSERVER_INTERFACE}} -DEFAULT_LANGUAGE={{DEFAULT_LANGUAGE}} -DEFAULT_COMMAND_PREFIX={{DEFAULT_COMMAND_PREFIX}} -Dterminal.jline=false -Dterminal.ansi=true -jar {{JARFILE}}",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"\"\r\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n# Java Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\nPROJECT=java\r\n\r\napt update\r\napt install -y curl jq\r\n\r\ncd \/mnt\/server",
+            "container": "debian:buster-slim",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "JAR FILE",
+            "description": "",
+            "env_variable": "JARFILE",
+            "default_value": "Nameless-Link.jar",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "TOKEN",
+            "description": "",
+            "env_variable": "DISCORD_TOKEN",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100"
+        },
+        {
+            "name": "Api Url",
+            "description": "",
+            "env_variable": "API_URL",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100"
+        },
+        {
+            "name": "Bot Url",
+            "description": "",
+            "env_variable": "BOT_URL",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100"
+        },
+        {
+            "name": "Webserver Port",
+            "description": "",
+            "env_variable": "WEBSERVER_PORT",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "Guild Id",
+            "description": "",
+            "env_variable": "GUILD_ID",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "Webserver Bind",
+            "description": "",
+            "env_variable": "WEBSERVER_BIND",
+            "default_value": "127.0.0.1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "Default Command Prefix",
+            "description": "",
+            "env_variable": "DEFAULT_COMMAND_PREFIX",
+            "default_value": "!",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "Default Language",
+            "description": "",
+            "env_variable": "DEFAULT_LANGUAGE",
+            "default_value": "en_UK",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        }
+    ]
+}
