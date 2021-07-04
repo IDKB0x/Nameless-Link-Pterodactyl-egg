@@ -10,7 +10,7 @@
     "description": "An unofficial Pterodactyl egg for the Namelessmc Discord bot.",
     "features": null,
     "images": [
-        "quay.io\/parkervcp\/pterodactyl-images:debian_openjdk-16"
+        "namelessmc/discord-link:2.0"
     ],
     "file_denylist": [],
     "startup": "java -DISCORD_TOKEN={{DISCORD_TOKEN}} -BOT_URL={{BOT_URL}} -API_URL={{API_URL}} -WEBSERVER_PORT={{WEBSERVER_PORT}} -GUILD_ID={{GUILD_ID}} -WEBSERVER_INTERFACE={{WEBSERVER_INTERFACE}} -DEFAULT_LANGUAGE={{DEFAULT_LANGUAGE}} -DEFAULT_COMMAND_PREFIX={{DEFAULT_COMMAND_PREFIX}} -Dterminal.jline=false -Dterminal.ansi=true -jar {{JARFILE}}",
@@ -78,15 +78,6 @@
             "description": "",
             "env_variable": "GUILD_ID",
             "default_value": "",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|string|max:20"
-        },
-        {
-            "name": "Webserver Bind",
-            "description": "",
-            "env_variable": "WEBSERVER_BIND",
-            "default_value": "0.0.0.0",
             "user_viewable": true,
             "user_editable": true,
             "rules": "required|string|max:20"
