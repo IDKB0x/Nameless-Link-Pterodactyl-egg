@@ -86,7 +86,7 @@
             "name": "Webserver Bind",
             "description": "",
             "env_variable": "WEBSERVER_BIND",
-            "default_value": "127.0.0.1",
+            "default_value": "0.0.0.0",
             "user_viewable": true,
             "user_editable": true,
             "rules": "required|string|max:20"
