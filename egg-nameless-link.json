@@ -13,7 +13,7 @@
         "namelessmc/discord-link:2.0"
     ],
     "file_denylist": [],
-    "startup": "java -DISCORD_TOKEN={{DISCORD_TOKEN}} -BOT_URL={{BOT_URL}} -API_URL={{API_URL}} -WEBSERVER_PORT={{WEBSERVER_PORT}} -GUILD_ID={{GUILD_ID}} -WEBSERVER_INTERFACE={{WEBSERVER_INTERFACE}} -DEFAULT_LANGUAGE={{DEFAULT_LANGUAGE}} -DEFAULT_COMMAND_PREFIX={{DEFAULT_COMMAND_PREFIX}} -Dterminal.jline=false -Dterminal.ansi=true -jar {{JARFILE}}",
+    "startup": "java -DISCORD_TOKEN={{DISCORD_TOKEN}} -BOT_URL={{BOT_URL}} -API_URL={{API_URL}} -GUILD_ID={{GUILD_ID}} -DEFAULT_LANGUAGE={{DEFAULT_LANGUAGE}} -DEFAULT_COMMAND_PREFIX={{DEFAULT_COMMAND_PREFIX}} -Dterminal.jline=false -Dterminal.ansi=true -jar {{JARFILE}}",
     "config": {
         "files": "{}",
         "startup": "{\r\n    \"done\": \"\"\r\n}",
@@ -63,15 +63,6 @@
             "user_viewable": true,
             "user_editable": true,
             "rules": "required|string|max:100"
-        },
-        {
-            "name": "Webserver Port",
-            "description": "",
-            "env_variable": "WEBSERVER_PORT",
-            "default_value": "27362",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|string|max:20"
         },
         {
             "name": "Guild Id",
